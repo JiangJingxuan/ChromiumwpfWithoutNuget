@@ -32,9 +32,11 @@ namespace ChromiumWpf
                 UserDataPath = $@"{cef_root}\userdata",
                 ResourcesDirPath = cef_root,
                 LocalesDirPath = $@"{cef_root}",
+
                 Locale = "zh-CN",
                 CachePath = $@"{cef_root}\cache",
             };
+            CefSharpSettings.LegacyJavascriptBindingEnabled = true;
             Cef.Initialize(settings, performDependencyCheck: false, browserProcessHandler: null);
         }
     }

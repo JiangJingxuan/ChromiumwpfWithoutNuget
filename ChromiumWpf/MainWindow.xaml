@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:ChromiumWpf"
         xmlns:chrome="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <chrome:ChromiumWebBrowser Address="http://www.baidu.com/" Opacity="0.5" />
+        xmlns:gs="clr-namespace:Develop.Extension.Wpf;assembly=Develop.Extension.Wpf"
+        Title="{Binding Title, ElementName=chromiumWebBrowser}" Height="450" Width="800">
+    <Grid DataContext="{Binding Main , Source={StaticResource Locator}}">
+        <ContentPresenter Content="{Binding WebBrowser}"/>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Content="空白" Command="{Binding BlankCommand}"/>
     </Grid>
 </Window>
