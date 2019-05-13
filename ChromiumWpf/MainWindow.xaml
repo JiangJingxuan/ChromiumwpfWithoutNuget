@@ -4,12 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChromiumWpf"
-        xmlns:chrome="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:chrome="clr-namespace:CefSharp.Wpf.Experimental;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
         xmlns:gs="clr-namespace:Develop.Extension.Wpf;assembly=Develop.Extension.Wpf"
         Title="{Binding Title, ElementName=chromiumWebBrowser}" Height="450" Width="800">
     <Grid DataContext="{Binding Main , Source={StaticResource Locator}}">
-        <ContentPresenter Content="{Binding WebBrowser}"/>
-        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Content="空白" Command="{Binding BlankCommand}"/>
+        <chrome:ChromiumWebBrowserWithTouchSupport Address="http://www.qq.com/"/>
     </Grid>
 </Window>
